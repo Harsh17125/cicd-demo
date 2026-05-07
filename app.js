@@ -1,9 +1,9 @@
-const express = require('express');
-const app = express();
+const request = require('supertest');
 const app = require('../app');
 
-app.get('/', (req, res) => {
-  res.send('CI/CD Pipeline Working!');
-});
+test('GET / should return success message', async () => {
+  const response = await request(app);
 
-module.exports = app;
+  expect(response.statusCode).toBe(200);
+  expect(response.text).toBe('Wrong Message');
+});
