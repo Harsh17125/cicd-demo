@@ -7,3 +7,7 @@ test('GET / should return success message', async () => {
   expect(response.statusCode).toBe(200);
   expect(response.text).toBe('CI/CD Pipeline Working!');
 });
+
+test('example test', () => {
+  expect(1 + 1).toBe(2);
+});
